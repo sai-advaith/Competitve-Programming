@@ -8,19 +8,12 @@
  */
 class Solution {
     public int getDecimalValue(ListNode head) {
-        ListNode c = new ListNode(0);
-        c = head;
-        String val = "";
-        double sum = 0;
-        while(c != null)
+        int sum = 0;
+        while(head != null)
         {
-            val = val + String.valueOf(c.val);
-            c = c.next;
+            sum = sum << 1 | head.val;
+            head = head.next;
         }
-        for (int i = 0,j = val.length() - 1; i < val.length() && j >= 0;i++, j--)
-        {
-            sum = sum + (Character.getNumericValue(val.charAt(i)))*Math.pow(2,j);
-        }
-        return (int)sum;
+        return sum;
     }
 }
