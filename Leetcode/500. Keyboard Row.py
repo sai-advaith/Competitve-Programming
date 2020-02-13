@@ -6,18 +6,14 @@ class Solution:
         k = 0
         s = []
         def checkRow(s,k):
-            g = True
             for ch in s:
                 if k == 1 and ch not in r1:
-                    g  = False
-                    break
+                    return False
                 elif k == 2 and ch not in r2:
-                    g = False
-                    break
+                    return False
                 elif k == 3 and ch not in r3:
-                    g = False
-                    break
-            return g
+                    return False
+            return True
         for i in words:
             d = (i.lower())
             if d[0] in r1:
@@ -26,7 +22,6 @@ class Solution:
                 k = 2
             elif d[0] in r3:
                 k = 3
-            g = checkRow(d,k)
-            if (g):
+            if (checkRow(d,k)):
                 s.append(i)
         return s
