@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution {
+class Solution {//TODO: improve pls
     public static void shortestToChar(String S, char C) {
         ArrayList<Integer> myList = new ArrayList<>();
         for(int i =0 ;i<S.length();i++)
